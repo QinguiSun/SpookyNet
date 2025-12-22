@@ -1,0 +1,10 @@
+# 1. 构建 Docker 镜像的命令
+# 这个命令会使用当前目录下的 Dockerfile 来创建一个名为 spookynet-env 的 Docker 镜像。
+# 请在包含 Dockerfile 的项目根目录下运行此命令。
+docker build -t spookynet-env .
+
+# 2. 运行 Docker 容器的命令
+# 这个命令会启动一个基于 spookynet-env 镜像的交互式容器。
+# --gpus all 参数会把您服务器上的所有 GPU 都挂载到容器中，以便您的代码可以调用它们。
+# --rm 参数会在容器退出后自动删除它，以保持系统整洁。
+docker run -it --gpus all --rm spookynet-env
